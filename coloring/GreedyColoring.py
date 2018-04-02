@@ -1,5 +1,8 @@
 from graph import *
 import random
+import time
+
+
 
 def sortAsc(Graph):
 
@@ -41,6 +44,7 @@ def shuffle(Graph):
 def Greedy(Graph, list):
     # give all vertices color -1
 
+    start = time.time()
 
     if list == None:
         vertices = Graph.vertices
@@ -87,6 +91,9 @@ def Greedy(Graph, list):
 
     chromaticnr = chromaticnr + 1
 
-    return Graph, chromaticnr
+    end = time.time()
+    timer = end - start
+
+    return Graph, chromaticnr, timer
 
 
